@@ -14,9 +14,10 @@
     <body class="antialiased">
       <div id="app">
         @include('layouts.header')
-        <main class="container">
+        <main class="container pb-4">
           @yield('content')
         </main>
+        @include('layouts.footer')
       </div>
       @vite('resources/js/app.js')
     </body>
