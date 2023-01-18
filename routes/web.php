@@ -15,8 +15,8 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-Route::get('/', [PageController::class, 'home']);
-Route::get('home/index', [PageController::class, 'home']);
+Route::redirect('/', '/home/index');
+Route::get('home/index', [PageController::class, 'home'])->name('home');
 Route::prefix('account')->name('auth.')->group(function () {
     Route::get('/login', [AuthController::class, 'create'])->name('create');
     Route::post('/login', [AuthController::class, 'store'])->name('store');
