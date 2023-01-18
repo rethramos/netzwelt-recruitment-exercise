@@ -1,6 +1,9 @@
 @extends('layouts.app')
 @section('content')
   <form action="{{ route('auth.store') }}" method="post">
+    @isset($message)
+      <span>{{$message}}</span>
+    @endisset
     @csrf
     <div>
       <label for="username">Username</label>
