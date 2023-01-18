@@ -18,7 +18,7 @@ use App\Http\Controllers\AuthController;
 Route::get('/', [PageController::class, 'home']);
 Route::get('home/index', [PageController::class, 'home']);
 Route::prefix('account')->name('auth.')->group(function () {
-    Route::get('/login', [AuthController::class, 'index'])->name('index');
+    Route::get('/login', [AuthController::class, 'create'])->name('create');
     Route::post('/login', [AuthController::class, 'store'])->name('store');
 
 });
