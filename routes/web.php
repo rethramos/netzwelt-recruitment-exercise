@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,6 @@ use App\Http\Controllers\PageController;
 
 Route::get('/', [PageController::class, 'home']);
 Route::get('home/index', [PageController::class, 'home']);
+Route::prefix('account')->name('auth.')->group(function () {
+    Route::get('/login', [AuthController::class, 'index'])->name('index');
+});
