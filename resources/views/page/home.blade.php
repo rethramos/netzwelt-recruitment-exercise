@@ -3,7 +3,7 @@
   <h1>Territories</h1>
   <p>Here are the list of territories</p>
 
-  <ul>
+  <ul class="toggle-list">
     <toggle-list-item :tree-nodes="{{json_encode($roots)}}"/>
   </ul>
 @endsection
