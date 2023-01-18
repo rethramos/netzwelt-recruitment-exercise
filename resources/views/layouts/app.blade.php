@@ -12,8 +12,11 @@
         @vite('resources/css/app.css')
     </head>
     <body class="antialiased">
-      <div id="app" class="container">
-        @yield('content')
+      <div id="app">
+        @include('layouts.header')
+        <main class="container">
+          @yield('content')
+        </main>
       </div>
       @vite('resources/js/app.js')
     </body>

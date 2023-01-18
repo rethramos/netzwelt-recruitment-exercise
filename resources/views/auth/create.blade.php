@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+  <h1>Log in</h1>
   <div class="card">
     <form action="{{ route('auth.store') }}" method="post" class="card-body">
       @isset($message)
