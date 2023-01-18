@@ -21,6 +21,9 @@ class AuthController extends Controller
         return view('auth.create', ['message' => $response->json('message')]);
     }
 
+    $request->session()->regenerate();
+    $request->session()->put('user', $response->json());
+    
     return redirect()->route('home');
     
    }
