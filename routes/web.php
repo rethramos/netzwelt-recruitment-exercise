@@ -18,7 +18,7 @@ use App\Http\Controllers\AuthController;
 Route::redirect('/', '/home/index');
 Route::get('home/index', [PageController::class, 'home'])
   ->middleware('auth.netzwelt')->name('home');
-Route::prefix('account')->name('auth.')->group(function () {
+Route::prefix('account')->name('auth.')->middleware('guest.netzwelt')->group(function () {
     Route::get('/login', [AuthController::class, 'create'])->name('create');
     Route::post('/login', [AuthController::class, 'store'])->name('store');
 
